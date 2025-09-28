@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="autor"
+        content="Bryan de Jes&uacute;s Alcaraz Guzm&aacute;n, Melissa Magdalena Gonz&aacute;lez Vela, Leonardo Yahir Guerrero Mart&iacute;nez, Santos Eduardo L&oacute;pez P&eacute;rez, Pedro Ca&iacute;n S&aacute;nchez Parra" />
+    <meta name="description" content="SoftTics: Soluciones de software a medida para empresas. Transformamos tus ideas en productos digitales funcionales y escalables." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html" charset="ISO-8859-1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="text/css" href="imagenes/logo_textless.png">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>SoftTics</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="inicio">
+            <img src="multimedia/logo.png" alt="Logo SoftTics">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acercade">Acerca de</a></li>
+                <li><a href="#tecnologias-video">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección "Quiénes Somos" con carrusel -->
+        <section class="quienes-somos-container" id="acercade">
+            <div id="frameprincipal" class="cuadro-centro">
+                <h1>¿Quienes Somos?</h1>
+                <p>En SoftTics somos una empresa especializada en el desarrollo de software, comprometida con ofrecer soluciones innovadoras y de alta calidad que impulsen el crecimiento de nuestros clientes. Nuestro equipo está conformado por profesionales apasionados por la tecnología, la creatividad y la mejora continua, lo que nos permite abordar proyectos de diversas complejidades con excelencia.
+                    <br><br>
+                   Nos apoyamos en los principios de la Ingeniería de Software y adoptamos metodologías ágiles como Scrum, lo que nos permite gestionar los proyectos de manera flexible, eficiente y adaptativa, garantizando entregas rápidas y alineadas con los objetivos de negocio de nuestros clientes. Además, fomentamos la colaboración cercana con cada cliente, escuchando sus necesidades y ofreciendo soluciones personalizadas que realmente generen valor.
+                   <br><br>
+                   En SoftTics creemos que la innovación no solo reside en la tecnología, sino también en la forma de trabajar, en la creatividad de nuestro equipo y en la capacidad de transformar ideas en productos funcionales, intuitivos y sostenibles. Nuestra misión es ser un socio estratégico confiable, apoyando a empresas de todos los tamaños a enfrentar los desafíos tecnológicos del presente y del futuro.</p>
+                <audio preload id="audio" controls autoplay source src="multimedia/Meli-Audio-Presentacion.mp3"></audio>
+            </div>
+
+
+            <div class="carousel-container cuadro-centro">
+                <h1>Imágenes</h1>
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <img src="multimedia\img2.jpg" alt="Imagen 2">
+                        <img src="multimedia\img3.jpg" alt="Imagen 3">
+                        <img src="multimedia\img4.jpg" alt="Imagen 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Script carrusel -->
+        <script>
+            const images = document.querySelector(".carousel-images");
+            const total = document.querySelectorAll(".carousel-images img").length;
+            let index = 0;
+
+            setInterval(() => {
+                index = (index + 1) % total;
+                images.style.transform = `translateX(${-index * 100}%)`;
+            }, 3000); // cambia cada 3 segundos
+        </script>
+
+        <!-- Tecnologías y Video -->
+        <section id="tecnologias-video">
+            <div class="frametecnologias">
+                <h2>Tecnologías que manejamos</h2>
+                <div class="container">
+                    <div class="item html">
+                        <div class="icon">💻</div>
+                        HTML, CSS, etc
+                    </div>
+                    <br>
+                    <div class="item java">
+                        <div class="icon">💻</div>
+                        Java
+                    </div>
+                    <br>
+                    <div class="item ensamblador">
+                        <div class="icon">💻</div>
+                        Ensamblador
+                    </div>
+                </div>
+            </div>
+
+            <div class="cuadro-video">
+                <h2>Video sobre nosotros</h2>
+                <video poster="multimedia/Captura de pantalla 2025-09-26 223415.png" width="100%" height="70%" preload
+                    id="video" src="multimedia\SoftTics (Video Presentación).mp4"
+                    controls></video>
+            </div>
+        </section>
+
+        <!-- Formulario y Tabla de Precios -->
+        <section id="formulario">
+            <div class="form-contenedor">
+                <div class="cuadro-form">
+                    <h2>¿Quieres ser parte del equipo? ¡Únetenos!</h2>
+                    <form action="mailto:contacto@softtics.com" method="post" enctype="text/plain">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" required>
+
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="text" id="correo" name="correo" required>
+
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" required>
+
+                        <label for="mensaje">¿Tienes un proyecto en mente? ¡Cuéntanos!</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" cols="50"></textarea>
+
+                        <p>Selecciona tu género:</p>
+                        <div class="opciones">
+                            <div class="opcion">
+                                <label for="masculino">Masculino</label>
+                                <input type="radio" id="masculino" name="genero" value="masculino">
+                            </div>
+                            <div class="opcion">
+                                <label for="femenino">Femenino</label>
+                                <input type="radio" id="femenino" name="genero" value="femenino">
+                            </div>
+                            <div class="opcion">
+                                <label for="otro">Otro</label>
+                                <input type="radio" id="otro" name="genero" value="otro">
+                            </div>
+                        </div>
+
+                        <p>Servicios de interés:</p>
+                        <div class="opciones">
+                            <div class="opcion">
+                                <label for="web">Desarrollo Web</label>
+                                <input type="checkbox" id="web" name="servicios" value="Desarrollo Web">
+                            </div>
+                            <div class="opcion">
+                                <label for="app">Aplicaciones Móviles</label>
+                                <input type="checkbox" id="app" name="servicios" value="Aplicaciones Móviles">
+                            </div>
+                            <div class="opcion">
+                                <label for="consultoria">Consultoría</label>
+                                <input type="checkbox" id="consultoria" name="servicios" value="Consultoría">
+                            </div>
+
+                            <label for="proyecto">Tipo de proyecto:</label>
+                            <select id="proyecto" name="proyecto">
+                                <option value="">Seleccione una opción...</option>
+                                <option value="web">Desarrollo Web</option>
+                                <option value="movil">Aplicación Móvil</option>
+                                <option value="software">Software a la medida</option>
+                                <option value="consultoria">Consultoría en TI</option>
+                            </select>
+                        </div>
+
+                        <div class="botones-form">
+                            <button type="submit">Enviar</button>
+                            <button type="reset">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tabla-container">
+                <table>
+                    <caption>Tabla de paquetes</caption>
+                    <tr>
+                        <th>Paquete</th>
+                        <th>Contenido</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td><b>Pequeña</b></td>
+                        <td><b>Diseño sencillo (texto e imágenes), sin e-commerce.</b></td>
+                        <td><b>3000 MXN</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Mediana</b></td>
+                        <td><b>Diseño más elaborado, optimización básica SEO, integración con redes sociales Blog,
+                                galería de imágenes, secciones interactivas, formulario avanzado.</b></td>
+                        <td><b>8000 MXN</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Grande</b></td>
+                        <td><b>Diseño profesional y personalizado, optimización SEO avanzada, responsive avanzado Tienda
+                                en línea, carrito de compras, pagos en línea, base de datos, sistemas internos,
+                                seguridad avanzada.</b></td>
+                        <td><b>10000-15000 MXN</b></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Contacto y Ubicación lado a lado -->
+        <section id="contacto-ubicacion">
+            <div id="contacto" class="cuadro-centro">
+                <h1>Contacto</h1>
+                <p>Correo: <a href="mailto:contacto@softtics.com">contacto@softtics.com</a></p>
+                <p>Teléfono: +52 123 456 7890</p>
+                <p>Dirección: José María Morelos 466, Centro, 64000 Monterrey, N.L.</p>
+            </div>
+
+            <div id="ubicacion" class="cuadro-centro">
+                <h1>¿Dónde encontrarnos?</h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d899.0309261205205!2d-100.31304853044436!3d25.66719370736001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662be2eee36f715%3A0x96159e19e82a4a08!2sJos%C3%A9%20Mar%C3%ADa%20Morelos%20466%2C%20Centro%2C%2064000%20Monterrey%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1759013274248!5m2!1ses-419!2smx"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SoftTics - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
